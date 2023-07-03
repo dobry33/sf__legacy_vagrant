@@ -1,0 +1,1 @@
+sudo apt install  /home/vagrant/postgresql-8.4_8.4.22-8.pgdg22.04+1+b1_amd64.deb

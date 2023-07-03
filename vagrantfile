@@ -1,0 +1,15 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/jammy64"
+  
+    config.vm.provider "virtualbox" do |vb|
+      vb.name = "vmpostgres"
+      vb.memory = "4096"
+      vb.cpus = 2
+    end
+  
+    config.vm.hostname = "vmpostgres8.4"
+      
+    config.vm.provision "file", source: "/home/alex/SkillFactory/vagrant/postgresql-8.4_8.4.22-8.pgdg22.04+1+b1_amd64.deb", destination: "$HOME/postgresql-8.4_8.4.22-8.pgdg22.04+1+b1_amd64.deb"
+
+    config.vm.provision "shell", path: "provision.sh"
+  end
